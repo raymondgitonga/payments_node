@@ -40,7 +40,7 @@ router.get('/register', access, (req, res)=>{
     })
 })
 
-router.get('/stk', access, (req, res)=>{
+router.post('/stk', access, (req, res)=>{
     const phone = req.body.phone
     const amount = req.body.amount 
 
