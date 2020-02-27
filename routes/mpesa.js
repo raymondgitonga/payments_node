@@ -29,8 +29,8 @@ router.get('/register', access, (req, res)=>{
         json: {
           "ShortCode": "600732",
           "ResponseType": "Complete",
-          "ConfirmationURL": "http://192.168.88.32:9992/mobile/confirmation",
-          "ValidationURL": "http://192.168.88.32:9992/mobile/validation_url"
+          "ConfirmationURL": "http://payment-env.y3jkszyd3w.eu-west-2.elasticbeanstalk.com/mobile/confirmation",
+          "ValidationURL": "http://payment-env.y3jkszyd3w.eu-west-2.elasticbeanstalk.com/mobile/validation_url"
         }
     },
     function(error, response, body){
