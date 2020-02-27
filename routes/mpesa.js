@@ -41,6 +41,9 @@ router.get('/register', access, (req, res)=>{
 })
 
 router.get('/stk', access, (req, res)=>{
+    const phone = req.body.phone
+    const amount = req.body.amount 
+
     let endpoint = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
     let auth = "Bearer "+ req.access_token
 
@@ -59,10 +62,10 @@ router.get('/stk', access, (req, res)=>{
             "Password": password,
             "Timestamp": timestamp,
             "TransactionType": "CustomerPayBillOnline",
-            "Amount": "1",
-            "PartyA": "254714581282",
+            "Amount": amount,
+            "PartyA": phone,
             "PartyB": "174379",
-            "PhoneNumber": "254714581282",
+            "PhoneNumber": phone,
             "CallBackURL": "http://payment-env.y3jkszyd3w.eu-west-2.elasticbeanstalk.com/mobile/stk_callback",
             "AccountReference": "Pool Test",
             "TransactionDesc": "Pool Test"
