@@ -6,7 +6,7 @@ const port = process.env.PORT || 9992
 
 
 app.get('/', (req, res)=>{
-    res.send('Home page ');
+    res.send('Home page');
 });
 
 app.use(express.urlencoded({ extended: false }));
