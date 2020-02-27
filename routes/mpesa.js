@@ -63,7 +63,7 @@ router.get('/stk', access, (req, res)=>{
             "PartyA": "254714581282",
             "PartyB": "174379",
             "PhoneNumber": "254714581282",
-            "CallBackURL": "https://99ec6ac2.ngrok.io/mobile/stk_callback",
+            "CallBackURL": "http://payment-env.y3jkszyd3w.eu-west-2.elasticbeanstalk.com/mobile/stk_callback",
             "AccountReference": "Pool Test",
             "TransactionDesc": "Pool Test"
         }
