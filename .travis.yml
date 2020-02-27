@@ -1,0 +1,15 @@
+deploy:
+    provider: elasticbeanstalk
+    edge: true
+    access_key_id: $AWS_ACCESS_ID
+    secret_access_key:
+      secure: $AWS_SECRET_KEY
+    region: eu-west-2
+    app: pool_auth
+    env: payment-env
+    bucket_name: elasticbeanstalk-eu-west-2-747115545713
+    on:
+      branch: master
+  
+    skip_cleanup: true
+    only_create_app_version: false
