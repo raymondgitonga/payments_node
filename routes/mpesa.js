@@ -75,7 +75,7 @@ router.get('/stk', access, (req, res)=>{
         if(error){
             console.log(error)
         }
-        res.status(200).json(body)
+        res.json({status:"Success"})
     })
 })
 
