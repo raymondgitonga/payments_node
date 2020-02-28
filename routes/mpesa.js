@@ -43,12 +43,12 @@ router.get('/register', access, (req, res)=>{
 router.post('/stk', access, (req, res)=>{
     const phone = req.body.phone
     const amount = req.body.amount 
+    const timestamp = req.body.timestamp
 
     let endpoint = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
     let auth = "Bearer "+ req.access_token
 
-    let datenow = new Date()
-    const timestamp = "20200227135800";
+    
     const password = new Buffer.from('174379' + 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919' + timestamp).toString('base64')
 
     request({
@@ -86,9 +86,9 @@ router.post('/stk_callback',(req, res) =>{
 router.get('/result_code', (req, res)=>{
 
     if(resultCode == 0){
-        res.json({result: "Success"})
+        res.send("Success")
     }else{
-        res.json({result: "Fail"})
+        res.send("Fail")
     }
 })
 
